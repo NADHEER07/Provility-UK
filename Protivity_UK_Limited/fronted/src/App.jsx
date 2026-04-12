@@ -250,27 +250,28 @@ const Contact = () => {
 
         const data = { name, email, message };
 
-        try {
-            const res = await fetch("http://localhost:5000/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            });
 
-            const result = await res.json();
+try {
+    const res = await fetch("https://protivity-uk.onrender.com/contact", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
 
-            alert("Message sent successfully 🔥");
+    const result = await res.json();
 
-            setName("");
-            setEmail("");
-            setMessage("");
+    alert("Message sent successfully 🔥");
 
-        } catch (err) {
-            console.log(err);
-            alert("Error sending message ❌");
-        }
+    setName("");
+    setEmail("");
+    setMessage("");
+
+} catch (err) {
+    console.log(err);
+    alert("Error sending message ❌");
+}
     };
 
     return (

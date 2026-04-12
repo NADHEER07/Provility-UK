@@ -25,7 +25,7 @@ Message:
 
     try:
         server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-        server.login(ADMIN_EMAIL, "fipp yedw cvvl smqm")
+       
 
         server.send_message(msg)
         server.quit()
